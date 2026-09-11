@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenda CSS Grid - Aula Prática</title>
+
+    <style>
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+        background-color:#E8DFC8;
+        color: #1c1e21;
+        padding: 20px;
+        }
+
+
+        header, nav, main, footer {
+        padding: 20px;
+        border-radius: 12px;
+        color: #ffffff;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        }
+
+        .header { background-color: #24133D; }
+        .menu   { background-color: #2F5D3A; }
+        .main   { background-color: #F8F1E1; color: #333; border: 2px dashed #cbd5e1; }
+        .footer { background-color:  #171717; }
+
+
+        .card {
+    background: linear-gradient(135deg, #E8D5A8, #D6BD88);
+    color: #3B2416;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #B08D57;
+    
+}
+
+
+        .layout-principal {
+
+        display: grid;
+
+
+        grid-template-columns: 3fr 1fr;
+
+
+        grid-template-rows: auto 1fr auto;
+
+        gap: 15px;
+
+        
+        grid-template-areas:
+            "header header"  
+            "main menu"    
+            "footer footer"; 
+
+        min-height: calc(100vh - 40px);
+        }
+
+        .header { grid-area: header; }
+        .menu   { grid-area: menu; }
+        .main   { grid-area: main; }
+        .footer { grid-area: footer; }
+
+
+        .cards-grid {
+        display: grid;
+        width: 100%;
+        
+        grid-template-columns: repeat(3, 1fr);
+        
+        gap: 15px;
+        }
+
+
+
+        @media (max-width: 768px) {
+        .layout-principal {
+            grid-template-columns: 1fr;
+            
+            grid-template-areas:
+            "header"
+            "menu"
+            "main"
+            "footer";
+        }
+
+        .cards-grid {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        }
+
+        @media (max-width: 480px) {
+        .cards-grid {
+            grid-template-columns: 1fr;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout-principal">
+        
+        <header class="header">
+        Conheça um pouco dos fatos sobre harry potter de acordo com a visão da duda!
+        </header>
+
+        <nav class="menu">
+        <img src="https://static.wikia.nocookie.net/harrypotter/images/7/7b/250px-Hogwartscrest.png/revision/latest/thumbnail/width/360/height/360?cb=20121119233851&path-prefix=pt-br" alt="imagem">
+        </nav>
+
+        <main class="main">
+        <div class="cards-grid">
+            <div class="card">Hermione é a mais inteligente</div>
+            <div class="card">Harry e gina não combinam nos filmes</div>
+            <div class="card">Rony é o mais engraçado</div>
+            <div class="card">Draco é gato sim</div>
+            <div class="card">Sirius Blcak foi um dos melhores personagens</div>
+            <div class="card">Imagina se o Harry tivesse ido para a sonserina(Ia ser babado)</div>
+            <div class="card">Cedric não deveria ter morrido!!!!!!!</div>
+            <div class="card">Dobby teve uma morte triste</div>
+            <div class="card">Belatriz a mais vaca de todas, vaca, vaca, vaca!!!!!</div>
+            <div class="card">Harry na banheira, oumaigod.</div>
+            <div class="card">Hermione deveria ter ficado o draco.</div>
+            <div class="card">Harry potter e o calice de fogo é o melhor filme.</div>
+
+            
+
+
+
+        </div>
+        </main>
+
+        <footer class="footer">
+        Agradeço pela visita a minha mente!
+        </footer>
+
+    </div>
+
+</body>
+</html>
